@@ -1,0 +1,46 @@
+
+@origin: 135deg;
+
+@color1: #5335cf;
+@color2: #de005e;
+@color3: #f66e48;
+
+@box_h: 100vh;
+@view_h: @box_h * 10;
+@duration: 5s;
+
+.screen-background {
+
+	height: @box_h;
+	width: @box_h;
+	overflow: hidden;
+	width: 100vw;
+    height: 100vh;
+    left: 50%;
+	top: 50%;
+	
+}
+
+.screen-background::after{
+    position: relative;
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: @view_h;
+    background: linear-gradient(@origin, @color1 0%, @color2 25%, @color3 50%, @color2 75%, @color1 100%);
+    animation: animatebg @duration*5 infinite linear;
+}
+
+@keyframes animatebg{
+	0%{
+		top: 0;
+	}
+	50%{
+		top: @box_h - @view_h;
+	}
+	100%{
+		top: 0;
+	}
+}
