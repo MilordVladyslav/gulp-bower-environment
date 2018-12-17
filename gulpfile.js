@@ -21,6 +21,8 @@ gulp.task('less', function () {
 
 gulp.task('scripts', function () {
     return gulp.src([
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/parallax-js/dist/parallax.min.js'
     ]) 
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
